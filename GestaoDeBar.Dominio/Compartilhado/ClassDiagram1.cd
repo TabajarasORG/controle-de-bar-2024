@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GestaoDeBar.Dominio.Produto">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAA=</HashCode>
+      <FileName>ModuloProduto\Produto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestaoDeBar.Dominio.ModuloGarcom.Garcom">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ModuloGarcom\Garcom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestaoDeBar.Dominio.ModuloConta.Conta">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAAAAAAAAAEAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModuloConta\Conta.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pedido" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GestaoDeBar.Dominio.Mesa">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModuloMesa\Mesa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GestaoDeBar.Dominio.ModuloPedido.Pedido">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAEAAIAAAAAAAAAAAAAAAIAAAABAAAAAAAE=</HashCode>
+      <FileName>ModuloPedido\Pedido.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Mesa" />
+      <Property Name="Garcom" />
+      <Property Name="Produto" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
