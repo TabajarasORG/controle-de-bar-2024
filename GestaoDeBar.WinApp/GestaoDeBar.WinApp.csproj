@@ -15,4 +15,13 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoDeBar.Dominio\GestaoDeBar.Dominio.csproj" />
+    <ProjectReference Include="..\GestaoDeBar.Infra\GestaoDeBar.Infra.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Compartilhado\" />
+  </ItemGroup>
+
 </Project>
