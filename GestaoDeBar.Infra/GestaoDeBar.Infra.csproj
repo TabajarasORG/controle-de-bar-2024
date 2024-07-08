@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoDeBar.Dominio\GestaoDeBar.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>
