@@ -36,6 +36,7 @@
             btnGravar = new Button();
             btnCancelar = new Button();
             txtId = new NumericUpDown();
+            lblId = new Label();
             ((System.ComponentModel.ISupportInitialize)txtPreco).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtId).BeginInit();
             SuspendLayout();
@@ -44,7 +45,7 @@
             // 
             lblProduto.AutoSize = true;
             lblProduto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblProduto.Location = new Point(59, 15);
+            lblProduto.Location = new Point(59, 51);
             lblProduto.Name = "lblProduto";
             lblProduto.Size = new Size(50, 20);
             lblProduto.TabIndex = 0;
@@ -54,7 +55,7 @@
             // 
             lblPreco.AutoSize = true;
             lblPreco.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPreco.Location = new Point(63, 59);
+            lblPreco.Location = new Point(63, 83);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(46, 20);
             lblPreco.TabIndex = 1;
@@ -63,7 +64,7 @@
             // txtNome
             // 
             txtNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNome.Location = new Point(115, 12);
+            txtNome.Location = new Point(115, 48);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(275, 27);
             txtNome.TabIndex = 0;
@@ -72,7 +73,7 @@
             // 
             txtPreco.DecimalPlaces = 2;
             txtPreco.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPreco.Location = new Point(115, 57);
+            txtPreco.Location = new Point(115, 81);
             txtPreco.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(120, 27);
@@ -104,21 +105,31 @@
             // 
             // txtId
             // 
-            txtId.DecimalPlaces = 2;
+            txtId.Enabled = false;
             txtId.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtId.Location = new Point(115, 90);
+            txtId.Location = new Point(115, 15);
             txtId.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
             txtId.Name = "txtId";
             txtId.Size = new Size(120, 27);
             txtId.TabIndex = 4;
             txtId.ThousandsSeparator = true;
-            txtId.Visible = false;
+            // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblId.Location = new Point(87, 17);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(22, 20);
+            lblId.TabIndex = 5;
+            lblId.Text = "Id";
             // 
             // TelaProdutoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(528, 167);
+            Controls.Add(lblId);
             Controls.Add(txtId);
             Controls.Add(btnCancelar);
             Controls.Add(btnGravar);
@@ -147,5 +158,6 @@
         private Button btnGravar;
         private Button btnCancelar;
         private NumericUpDown txtId;
+        private Label lblId;
     }
 }

@@ -38,6 +38,8 @@
             btnEditar = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
             btnExcluir = new ToolStripButton();
+            toolStripSeparator3 = new ToolStripSeparator();
+            btnAdiconarMesa = new ToolStripButton();
             lblTipo = new ToolStripLabel();
             painelRegistros = new Panel();
             statusStrip1 = new StatusStrip();
@@ -76,10 +78,10 @@
             // toolStrip1
             // 
             toolStrip1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, toolStripSeparator1, btnEditar, toolStripSeparator2, btnExcluir, lblTipo });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnAdicionar, toolStripSeparator1, btnEditar, toolStripSeparator2, btnExcluir, lblTipo, toolStripSeparator3, btnAdiconarMesa });
             toolStrip1.Location = new Point(0, 29);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(821, 34);
+            toolStrip1.Size = new Size(821, 38);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -93,14 +95,14 @@
             btnAdicionar.ImageTransparentColor = Color.Magenta;
             btnAdicionar.Margin = new Padding(3);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(28, 28);
+            btnAdicionar.Size = new Size(28, 32);
             btnAdicionar.Text = "toolStripButton1";
             btnAdicionar.Click += btnAdicionar_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 34);
+            toolStripSeparator1.Size = new Size(6, 38);
             // 
             // btnEditar
             // 
@@ -111,14 +113,14 @@
             btnEditar.ImageTransparentColor = Color.Magenta;
             btnEditar.Margin = new Padding(3);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(28, 28);
+            btnEditar.Size = new Size(28, 32);
             btnEditar.Text = "toolStripButton2";
             btnEditar.Click += btnEditar_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 34);
+            toolStripSeparator2.Size = new Size(6, 38);
             // 
             // btnExcluir
             // 
@@ -129,14 +131,32 @@
             btnExcluir.ImageTransparentColor = Color.Magenta;
             btnExcluir.Margin = new Padding(3);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(28, 28);
+            btnExcluir.Size = new Size(28, 32);
             btnExcluir.Text = "toolStripButton3";
             btnExcluir.Click += btnExcluir_Click;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 38);
+            // 
+            // btnAdiconarMesa
+            // 
+            btnAdiconarMesa.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnAdiconarMesa.Enabled = false;
+            btnAdiconarMesa.Image = (Image)resources.GetObject("btnAdiconarMesa.Image");
+            btnAdiconarMesa.ImageScaling = ToolStripItemImageScaling.None;
+            btnAdiconarMesa.ImageTransparentColor = Color.Magenta;
+            btnAdiconarMesa.Margin = new Padding(5);
+            btnAdiconarMesa.Name = "btnAdiconarMesa";
+            btnAdiconarMesa.Size = new Size(28, 28);
+            btnAdiconarMesa.Text = "toolStripButton1";
+            btnAdiconarMesa.Click += btnAdiconarMesa_Click;
             // 
             // lblTipo
             // 
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(0, 31);
+            lblTipo.Size = new Size(0, 35);
             // 
             // painelRegistros
             // 
@@ -213,5 +233,7 @@
         private ToolStripMenuItem produtoToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripSeparator toolStripSeparator2;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripButton btnAdiconarMesa;
     }
 }

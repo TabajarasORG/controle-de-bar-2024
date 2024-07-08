@@ -1,3 +1,5 @@
+using GestaoDeBar.Dominio;
+using GestaoDeBar.Infra;
 using GestaoDeBar.Infra.Compartilhado;
 using GestaoDeBar.Infra.ModuloProduto;
 using GestaoDeBar.WinApp.Compartilhado;
@@ -10,7 +12,7 @@ namespace GestaoDeBar.WinApp
         ControladorBase controlador;
 
         RepositorioProduto repositorioProduto;
-
+        RepositorioMesa repositorioMesa;
         public static TelaPrincipal Instancia { get; private set; }
 
         public TelaPrincipal()
@@ -22,6 +24,7 @@ namespace GestaoDeBar.WinApp
             Instancia = this;
 
             repositorioProduto = new RepositorioProduto(dbContext);
+            repositorioMesa = new RepositorioMesa(dbContext);
         }
 
         public void AtualizarRodape(string texto)
@@ -34,6 +37,20 @@ namespace GestaoDeBar.WinApp
             controlador = new ControladorProduto(repositorioProduto);
 
             ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void btnAdiconarMesa_Click(object sender, EventArgs e)
+        {
+            Mesa mesa = new Mesa();
+
+            repositorioMesa.Cadastrar(mesa);
+
+            MessageBox.Show(
+                   "Mesa adicionada com sucesso.",
+                   "Aviso",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Information
+               );
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -64,7 +81,7 @@ namespace GestaoDeBar.WinApp
             btnAdicionar.Enabled = controladorSelecionado is ControladorBase;
             btnEditar.Enabled = controladorSelecionado is ControladorBase;
             btnExcluir.Enabled = controladorSelecionado is ControladorBase;
-
+            btnAdiconarMesa.Enabled = controladorSelecionado is ControladorBase;
             ConfigurarToolTips(controladorSelecionado);
         }
 
@@ -73,6 +90,7 @@ namespace GestaoDeBar.WinApp
             btnAdicionar.Text = controladorSelecionado.ToolTipAdicionar;
             btnEditar.Text = controladorSelecionado.ToolTipEditar;
             btnExcluir.Text = controladorSelecionado.ToolTipExcluir;
+            btnAdiconarMesa.Text = "Adicionar Mesa";
         }
 
         private void ConfigurarListagem(ControladorBase controladorSelecionado)

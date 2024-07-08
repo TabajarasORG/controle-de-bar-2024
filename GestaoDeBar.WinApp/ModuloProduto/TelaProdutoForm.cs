@@ -32,7 +32,7 @@ namespace GestaoDeBar.WinApp.ModuloProduto
             string nome = txtNome.Text;
             decimal preco = txtPreco.Value;
 
-            produto = new Produto(id,nome,preco);
+            produto = new Produto(id, nome, preco);
 
             List<string> erros = produto.Validar();
 
@@ -44,5 +44,6 @@ namespace GestaoDeBar.WinApp.ModuloProduto
             }
 
         }
+
     }
 }
