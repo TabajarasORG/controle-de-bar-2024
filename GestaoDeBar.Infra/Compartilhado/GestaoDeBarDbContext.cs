@@ -19,6 +19,23 @@ namespace GestaoDeBar.Infra.Compartilhado
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            modelBuilder.Entity<Produto>(produtoBuilder =>
+            {
+                produtoBuilder.ToTable("TBProduto");
+
+                produtoBuilder.Property(p => p.Id)
+                .IsRequired()
+                .ValueGeneratedOnAdd();
+
+                produtoBuilder.Property(p => p.Nome)
+                .IsRequired()
+                .HasColumnType("varchar(150)");
+
+                produtoBuilder.Property(p => p.Preco)
+                .IsRequired()
+                .HasColumnType("int");
+            });
+
             base.OnModelCreating(modelBuilder);
         }
     }
