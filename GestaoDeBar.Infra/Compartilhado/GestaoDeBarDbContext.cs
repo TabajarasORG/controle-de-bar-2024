@@ -6,6 +6,8 @@ namespace GestaoDeBar.Infra.Compartilhado
     public class GestaoDeBarDbContext : DbContext
     {
         public DbSet<Produto> Produtos { get; set; }
+        
+        public DbSet<Mesa> Mesas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -36,6 +38,14 @@ namespace GestaoDeBar.Infra.Compartilhado
                 .HasColumnType("int");
             });
 
+            modelBuilder.Entity<Mesa>(mesaBuilder =>
+            {
+                mesaBuilder.ToTable("TBMesa");
+
+                mesaBuilder.Property(m => m.Id)
+                    .IsRequired()
+                    .ValueGeneratedOnAdd();
+            });
             base.OnModelCreating(modelBuilder);
         }
     }
