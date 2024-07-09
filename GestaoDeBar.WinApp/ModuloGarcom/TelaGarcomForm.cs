@@ -1,13 +1,4 @@
 ﻿using GestaoDeBar.Dominio.ModuloGarcom;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GestaoDeBar.WinApp.ModuloGarcom
 {
@@ -16,14 +7,14 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
         private Garcom garcom;
         public Garcom Garcom
         {
+            set
+            {
+                txtId.Value = value.Id;
+                txtNome.Text = value.Nome;
+            }
             get
             {
                 return garcom;
-            }
-            set
-            {
-                txtId.Text = value.Id.ToString();
-                txtNome.Text = value.Nome;
             }
         }
 
@@ -34,10 +25,27 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtId.Text);
             string nome = txtNome.Text;
 
-            garcom = new Garcom(id, nome);
+            if (txtId.Value == 0)
+            {
+                garcom = new Garcom(nome);
+            }
+            else
+            {
+                int id = Convert.ToInt32(txtId.Value);
+                garcom = new Garcom(id, nome);
+            }
+
+
+            List<string> erros = garcom.Validar();
+
+            if (erros.Count > 0)
+            {
+                TelaPrincipal.Instancia.AtualizarRodape(erros[0]);
+
+                DialogResult = DialogResult.None;
+            }
         }
     }
 }

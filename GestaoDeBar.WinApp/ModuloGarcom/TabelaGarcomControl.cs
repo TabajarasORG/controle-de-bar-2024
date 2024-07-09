@@ -1,4 +1,5 @@
 ﻿using GestaoDeBar.Dominio.ModuloGarcom;
+using GestaoDeBar.WinApp.Compartilhado;
 namespace GestaoDeBar.WinApp.ModuloGarcom
 {
     public partial class TabelaGarcomControl : UserControl
@@ -9,8 +10,8 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
 
             gridViewGarcom.Columns.AddRange(ObterColunas());
 
-            //GridViewGarcom.ConfigurarGridSomenteLeitura();
-            //GridViewGarcom.ConfigurarGridZebrado();
+            gridViewGarcom.ConfigurarGridSomenteLeitura();
+            gridViewGarcom.ConfigurarGridZebrado();
         }
 
         public void AtualizarRegistros(List<Garcom> Garcons)
@@ -23,7 +24,7 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
 
         public int ObterRegistroSelecionado()
         {
-            return gridViewGarcom.Rows.Count;
+            return gridViewGarcom.SelecionarId();
         }
 
         private DataGridViewColumn[] ObterColunas()

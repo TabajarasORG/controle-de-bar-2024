@@ -15,6 +15,11 @@ namespace GestaoDeBar.Dominio.ModuloGarcom
             Nome = nome;
         }
 
+        public Garcom(string nome)
+        {
+            Nome = nome;
+        }
+
         public override void AtualizarRegistro(EntidadeBase novoRegistro)
         {
             Garcom novoGarcom = (Garcom)novoRegistro;

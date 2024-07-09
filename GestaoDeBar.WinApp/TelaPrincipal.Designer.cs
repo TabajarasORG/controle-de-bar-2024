@@ -195,7 +195,7 @@
             garçomToolStripMenuItem.Name = "garçomToolStripMenuItem";
             garçomToolStripMenuItem.Size = new Size(180, 26);
             garçomToolStripMenuItem.Text = "Garçom";
-            garçomToolStripMenuItem.Click += garçomToolStripMenuItem_Click;
+            garçomToolStripMenuItem.Click += garcomToolStripMenuItem_Click;
             // 
             // TelaPrincipal
             // 

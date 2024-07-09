@@ -33,8 +33,9 @@
             lblNome = new Label();
             btnGravar = new Button();
             btnCancelar = new Button();
-            txtId = new TextBox();
             lblId = new Label();
+            txtId = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)txtId).BeginInit();
             SuspendLayout();
             // 
             // txtNome
@@ -78,15 +79,6 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // txtId
-            // 
-            txtId.Enabled = false;
-            txtId.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtId.Location = new Point(85, 19);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(159, 27);
-            txtId.TabIndex = 3;
-            // 
             // lblId
             // 
             lblId.AutoSize = true;
@@ -97,20 +89,31 @@
             lblId.TabIndex = 4;
             lblId.Text = "Id";
             // 
+            // txtId
+            // 
+            txtId.Enabled = false;
+            txtId.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(85, 19);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(120, 27);
+            txtId.TabIndex = 5;
+            // 
             // TelaGarcomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(535, 148);
-            Controls.Add(lblId);
             Controls.Add(txtId);
+            Controls.Add(lblId);
             Controls.Add(btnCancelar);
             Controls.Add(btnGravar);
             Controls.Add(lblNome);
             Controls.Add(txtNome);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "TelaGarcomForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastrar Garcom";
+            ((System.ComponentModel.ISupportInitialize)txtId).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,7 +124,7 @@
         private Label lblNome;
         private Button btnGravar;
         private Button btnCancelar;
-        private TextBox txtId;
         private Label lblId;
+        private NumericUpDown txtId;
     }
 }

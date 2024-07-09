@@ -43,7 +43,7 @@ namespace GestaoDeBar.WinApp
             ConfigurarTelaPrincipal(controlador);
         }
 
-        private void garçomToolStripMenuItem_Click(object sender, EventArgs e)
+        private void garcomToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorGarcom(repositorioGarcom);
 

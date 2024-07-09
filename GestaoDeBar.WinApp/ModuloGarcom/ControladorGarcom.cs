@@ -15,7 +15,7 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
             this.repositorioGarcom = repositorioGarcom;
         }
 
-        public override string TipoCadastro => "Garcoms";
+        public override string TipoCadastro => "Garcons";
 
         public override string ToolTipAdicionar => "Cadastrar Garcon";
 
