@@ -3,7 +3,7 @@ using GestaoDeBar.Infra.Compartilhado;
 
 namespace GestaoDeBar.Infra.ModuloGarcom
 {
-    internal class RepositorioGarcom
+    public class RepositorioGarcom
     {
         GestaoDeBarDbContext dbContext;
 

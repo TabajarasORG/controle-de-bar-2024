@@ -20,8 +20,4 @@
     <ProjectReference Include="..\GestaoDeBar.Infra\GestaoDeBar.Infra.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Compartilhado\" />
-  </ItemGroup>
-
 </Project>

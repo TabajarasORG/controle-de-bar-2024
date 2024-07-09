@@ -1,14 +1,4 @@
 ﻿using GestaoDeBar.Dominio.ModuloGarcom;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 namespace GestaoDeBar.WinApp.ModuloGarcom
 {
     public partial class TabelaGarcomControl : UserControl
@@ -31,10 +21,10 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
                 gridViewGarcom.Rows.Add(g.Id, g.Nome);
         }
 
-        //public int ObterRegistroSelecionado()
-        //{
-        //    return GridViewGarcom.SelecionarId();
-        //}
+        public int ObterRegistroSelecionado()
+        {
+            return gridViewGarcom.Rows.Count;
+        }
 
         private DataGridViewColumn[] ObterColunas()
         {
