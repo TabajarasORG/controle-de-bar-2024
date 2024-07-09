@@ -65,9 +65,9 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
             if (resultado != DialogResult.OK)
                 return;
 
-            Garcom garcomEditado = telaProdutoForm.Garcom;
+            Garcom garcom = telaProdutoForm.Garcom;
 
-            repositorioGarcom.Editar(idSelecionado, garcomEditado);
+            repositorioGarcom.Editar(idSelecionado, garcom);
 
             CarregarProdutos();
         }
@@ -76,9 +76,9 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
         {
             int idSelecionado = tabelaGarcom.ObterRegistroSelecionado();
 
-            Produto produtoSelecionado = repositorioGarcom.SelecionarPorId(idSelecionado);
+            Garcom garcomSelecionado = repositorioGarcom.SelecionarPorId(idSelecionado);
 
-            if (produtoSelecionado == null)
+            if (garcomSelecionado == null)
             {
                 MessageBox.Show(
                     "Não é possível realizar esta ação sem um registro selecionado.",
@@ -90,7 +90,7 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
             }
 
             DialogResult resposta = MessageBox.Show(
-                $"Você deseja realmente excluir o registro \"{produtoSelecionado.Nome}\"?",
+                $"Você deseja realmente excluir o registro \"{garcomSelecionado.Nome}\"?",
                 "Confirmar Exclusão",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
@@ -99,7 +99,7 @@ namespace GestaoDeBar.WinApp.ModuloGarcom
             if (resposta != DialogResult.Yes)
                 return;
 
-            repositorioGarcom.Excluir(produtoSelecionado.Id);
+            repositorioGarcom.Excluir(garcomSelecionado.Id);
 
             CarregarProdutos();
         }

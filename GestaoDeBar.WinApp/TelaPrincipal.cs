@@ -1,8 +1,10 @@
 using GestaoDeBar.Dominio;
 using GestaoDeBar.Infra;
 using GestaoDeBar.Infra.Compartilhado;
+using GestaoDeBar.Infra.ModuloGarcom;
 using GestaoDeBar.Infra.ModuloProduto;
 using GestaoDeBar.WinApp.Compartilhado;
+using GestaoDeBar.WinApp.ModuloGarcom;
 using GestaoDeBar.WinApp.ModuloProduto;
 
 namespace GestaoDeBar.WinApp
@@ -13,6 +15,7 @@ namespace GestaoDeBar.WinApp
 
         RepositorioProduto repositorioProduto;
         RepositorioMesa repositorioMesa;
+        RepositorioGarcom repositorioGarcom;
         public static TelaPrincipal Instancia { get; private set; }
 
         public TelaPrincipal()
@@ -25,6 +28,7 @@ namespace GestaoDeBar.WinApp
 
             repositorioProduto = new RepositorioProduto(dbContext);
             repositorioMesa = new RepositorioMesa(dbContext);
+            repositorioGarcom = new RepositorioGarcom(dbContext);
         }
 
         public void AtualizarRodape(string texto)
@@ -35,6 +39,13 @@ namespace GestaoDeBar.WinApp
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorProduto(repositorioProduto);
+
+            ConfigurarTelaPrincipal(controlador);
+        }
+
+        private void garçomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorGarcom(repositorioGarcom);
 
             ConfigurarTelaPrincipal(controlador);
         }
